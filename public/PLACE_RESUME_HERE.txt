@@ -1,0 +1,2 @@
+Place your resume PDF here as: resume.pdf
+It will be served at /resume.pdf and linked from the Download Resume buttons.
