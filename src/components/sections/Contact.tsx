@@ -123,7 +123,7 @@ useEffect(() => {
             className="font-syne font-bold text-[clamp(2.5rem,6vw,5rem)] leading-tight tracking-tight mb-6"
             style={{ color: "var(--text)" }}
           >
-            Let's build something{" "}
+            Let&apos;s build something{" "}
             <span className="text-gradient">great together</span>
           </h2>
 

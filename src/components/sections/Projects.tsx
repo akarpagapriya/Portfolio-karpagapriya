@@ -341,7 +341,7 @@ export default function Projects() {
         {/* Heading */}
         <div ref={headingRef} className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="label-tag">What I've Built</span>
+            <span className="label-tag">What I&apos;ve Built</span>
             <span className="h-px flex-1 max-w-[60px]" style={{ background: "var(--border)" }} />
           </div>
           <h2 className="section-heading" style={{ color: "var(--text)" }}>

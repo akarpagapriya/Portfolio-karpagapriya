@@ -95,14 +95,14 @@ export default function About() {
 
             <div className="space-y-5 font-dm leading-relaxed" style={{ color: "var(--muted)" }}>
               <p className="reveal-line">
-                I'm a UI Engineer based in{" "}
+                I&apos;m a UI Engineer based in{" "}
                 <span style={{ color: "var(--text)" }}>Madurai, Tamil Nadu</span> —
                 working at the intersection of design and frontend development.
               </p>
               <p className="reveal-line">
                 With{" "}
                 <span style={{ color: "var(--accent)" }}>1+ year of experience</span> at a
-                product-based company, I've shipped multiple production applications — crypto
+                product-based company, I&apos;ve shipped multiple production applications — crypto
                 payment gateways, Web3 SaaS platforms, multi-tenant admin dashboards — owning
                 every step from Figma prototype to deployed React application.
               </p>
@@ -110,7 +110,7 @@ export default function About() {
                 className="reveal-line font-syne text-lg font-medium"
                 style={{ color: "var(--text)" }}
               >
-                I don't hand off designs. I build them.
+                I don&apos;t hand off designs. I build them.
               </p>
               <p className="reveal-line">
                 Currently building{" "}
