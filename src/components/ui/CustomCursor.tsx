@@ -1,14 +1,29 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const noHover = window.matchMedia("(hover: none)").matches;
+    if (isCoarsePointer || noHover) {
+      return;
+    }
+
+    setVisible(true);
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
+
+    document.body.classList.add("custom-cursor-active");
 
     let mouseX = 0;
     let mouseY = 0;
@@ -22,6 +37,10 @@ export default function CustomCursor() {
       dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
     };
 
+    const onTouch = () => {
+      setVisible(false);
+    };
+
     const animate = () => {
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
@@ -31,31 +50,18 @@ export default function CustomCursor() {
 
     rafId = requestAnimationFrame(animate);
     window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchstart", onTouch, { passive: true });
+    window.addEventListener("touchmove", onTouch, { passive: true });
 
-    const onEnter = (e: Event) => {
-      const el = e.currentTarget as HTMLElement;
-      const rect = el.getBoundingClientRect();
+    const onEnter = () => {
       ring.style.width = "60px";
       ring.style.height = "60px";
       ring.style.opacity = "0.6";
-      ring.style.mixBlendMode = "screen";
-
-      // Magnetic effect
-      el.addEventListener("mousemove", (ev: MouseEvent) => {
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const deltaX = (ev.clientX - centerX) * 0.25;
-        const deltaY = (ev.clientY - centerY) * 0.25;
-        el.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-      });
     };
-
-    const onLeave = (e: Event) => {
-      const el = e.currentTarget as HTMLElement;
+    const onLeave = () => {
       ring.style.width = "28px";
       ring.style.height = "28px";
       ring.style.opacity = "1";
-      el.style.transform = "translate(0, 0)";
     };
 
     const magneticEls = document.querySelectorAll<HTMLElement>(
@@ -69,13 +75,22 @@ export default function CustomCursor() {
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchstart", onTouch);
+      window.removeEventListener("touchmove", onTouch);
+      magneticEls.forEach((el) => {
+        el.removeEventListener("mouseenter", onEnter);
+        el.removeEventListener("mouseleave", onLeave);
+      });
+      document.body.classList.remove("custom-cursor-active");
     };
-  }, []);
+  }, [visible]);
+
+  // Render nothing on touch devices
+  if (!visible) return null;
 
   return (
     <>
       <div
-        id="cursor-dot"
         ref={dotRef}
         style={{
           position: "fixed",
@@ -87,10 +102,11 @@ export default function CustomCursor() {
           zIndex: 99999,
           transform: "translate(-50%, -50%)",
           willChange: "transform",
+          top: 0,
+          left: 0,
         }}
       />
       <div
-        id="cursor-ring"
         ref={ringRef}
         style={{
           position: "fixed",
@@ -103,7 +119,8 @@ export default function CustomCursor() {
           transform: "translate(-50%, -50%)",
           willChange: "transform",
           transition: "width 0.3s ease, height 0.3s ease, opacity 0.3s ease",
-          opacity: 1,
+          top: 0,
+          left: 0,
         }}
       />
     </>
