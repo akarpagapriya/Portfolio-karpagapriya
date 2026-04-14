@@ -39,6 +39,10 @@ export const metadata: Metadata = {
     "Figma",
     "Karpagapriya",
   ],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -61,3 +65,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -46,7 +47,9 @@ export default function Navbar() {
           className="font-syne font-bold text-lg tracking-tight transition-opacity hover:opacity-70"
           style={{ color: "var(--text)" }}
         >
-          KA<span style={{ color: "var(--accent)" }}>.</span>
+          <Image src="/karpagapriya-logo.svg"
+            alt="Karpagapriya A" width={32} height={32} />
+
         </a>
 
         {/* Desktop links */}
@@ -74,12 +77,9 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href="/resume.pdf"
-            download
-            className="hidden md:inline-flex btn-primary text-xs px-5 py-2.5"
-            data-magnetic
-          >
-            Resume
+            href="#contact" className="hidden md:inline-flex btn-primary text-xs px-5 py-2.5"
+                    >
+            Hire Me
           </a>
           {/* Mobile hamburger */}
           <button
@@ -131,8 +131,8 @@ export default function Navbar() {
               </li>
             ))}
             <li className="px-6 pt-2">
-              <a href="/resume.pdf" download className="btn-primary text-xs px-5 py-2.5 w-full justify-center">
-                Resume
+              <a href="#contact" className="btn-primary text-xs px-5 py-2.5 w-full justify-center">
+                Hire Me
               </a>
             </li>
           </ul>
