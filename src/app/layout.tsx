@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "CGyeLX0J0b7V8tuddTYrcmFDM96d-6vkwD7Az5ENhr8",
+    google: "zESRsbx0IaDeAURF8RMxmacYioMgenGgvi2Cgp7jQyM",
   },
 
   alternates: {
