@@ -100,12 +100,14 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "add-your-google-search-console-verification-code-here",
+    google: "CGyeLX0J0b7V8tuddTYrcmFDM96d-6vkwD7Az5ENhr8",
   },
 
   alternates: {
     canonical: "https://portfolio-karpagapriya.vercel.app",
   },
+
+                                                                                                 
 };
 
 export default function RootLayout({
