@@ -27,21 +27,84 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Karpagapriya A — UI Engineer",
+  metadataBase: new URL("https://portfolio-karpagapriya.vercel.app"),
+
+  title: {
+    default: "Karpagapriya A — UI Engineer | React · Next.js · Figma",
+    template: "%s | Karpagapriya A",
+  },
+
   description:
-    "Portfolio of Karpagapriya A, UI Engineer specializing in Next.js, TypeScript, Figma-to-React and motion design.",
+    "UI Engineer based in Madurai, Tamil Nadu. I design in Figma and build in React. Specialising in Next.js, TypeScript, Tailwind CSS and production-grade dashboards. Open to remote and onsite roles.",
+
   keywords: [
     "UI Engineer",
     "Frontend Developer",
-    "React",
-    "Next.js",
+    "React Developer",
+    "Next.js Developer",
     "TypeScript",
-    "Figma",
+    "Figma to React",
+    "Tailwind CSS",
+    "Dashboard Developer",
+    "UI Developer Madurai",
+    "Frontend Engineer India",
     "Karpagapriya",
+    "Portfolio",
   ],
+
+  authors: [{ name: "Karpagapriya A", url: "https://portfolio-karpagapriya.vercel.app" }],
+  creator: "Karpagapriya A",
+
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+  icon: "/icon.png",
+  apple: "/apple-icon.png",
+  shortcut: "/favicon.ico",
+},
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://portfolio-karpagapriya.vercel.app",
+    siteName: "Karpagapriya A — UI Engineer",
+    title: "Karpagapriya A — UI Engineer | React · Next.js · Figma",
+    description:
+      "UI Engineer based in Madurai. I design in Figma and build in React. Specialising in Next.js, TypeScript and production dashboards. Open to roles immediately.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Karpagapriya A — UI Engineer Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Karpagapriya A — UI Engineer | React · Next.js · Figma",
+    description:
+      "UI Engineer based in Madurai. Figma to React. Next.js · TypeScript · Tailwind. Open to roles immediately.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  verification: {
+    google: "add-your-google-search-console-verification-code-here",
+  },
+
+  alternates: {
+    canonical: "https://portfolio-karpagapriya.vercel.app",
   },
 };
 

@@ -48,7 +48,9 @@ export default function Navbar() {
           style={{ color: "var(--text)" }}
         >
           <Image src="/karpagapriya-logo.svg"
-            alt="Karpagapriya A" width={32} height={32} />
+            alt="Karpagapriya A" 
+                      width={32} height={32}
+                      />
 
         </a>
 
