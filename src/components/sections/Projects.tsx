@@ -591,7 +591,7 @@ function FeaturedSlide({
                 }}
               >
                 {project.year}
-              </div> */}
+              </div> */} 
             </div>
           </div>
         </div>
