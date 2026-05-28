@@ -5,6 +5,7 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
+// import Freelance from "@/components/sections/Freelance";
 import Certifications from "@/components/sections/Certifications";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
@@ -14,9 +15,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Karpagapriya A",
-    jobTitle: "UI Engineer",
+    jobTitle: "UI Engineer & Freelance Web Designer",
     description:
-      "UI Engineer specialising in React, Next.js, TypeScript and Figma-to-production workflows. Based in Madurai, Tamil Nadu.",
+      "UI Engineer and freelance web designer based in Madurai, Tamil Nadu. Specialising in logo design, brand identity, website development and React web applications. Serving clients in Madurai, Tamil Nadu, India and internationally.",
     url: "https://portfolio-karpagapriya.vercel.app",
     email: "karpagapriya.ak@gmail.com",
     telephone: "+91-9080437163",
@@ -32,10 +33,59 @@ export default function Home() {
       "https://behance.net/karpagapriya",
     ],
     knowsAbout: [
-      "React.js", "Next.js", "TypeScript", "Tailwind CSS",
-      "Figma", "UI Engineering", "Frontend Development",
-      "Design Systems", "GSAP", "Dashboard Development",
+      "Logo Design",
+      "Brand Identity",
+      "Website Design",
+      "Website Development",
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Figma",
+      "UI Engineering",
+      "Frontend Development",
+      "Design Systems",
+      "Web App Development",
+      "Freelance Web Designer Madurai",
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Freelance Design & Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Logo & Brand Identity Design",
+            description: "Professional logo design and brand identity systems starting at ₹4,000",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Development",
+            description: "Responsive website development with Next.js starting at ₹12,000",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Web App Development",
+            description: "React and Next.js web application development starting at ₹25,000",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "UI/UX Design",
+            description: "Figma UI/UX design and prototyping starting at ₹6,000",
+          },
+        },
+      ],
+    },
   };
 
   return (
@@ -51,6 +101,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
+        {/* <Freelance /> */}
         <Certifications />
         <Education />
         <Contact />

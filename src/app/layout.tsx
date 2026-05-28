@@ -50,6 +50,35 @@ export const metadata: Metadata = {
     "Frontend Engineer India",
     "Karpagapriya",
     "Portfolio",
+    // Freelance intent — local
+    "freelance web designer Madurai",
+    "freelance web developer Madurai",
+    "logo designer Madurai",
+    "website designer Madurai",
+    "graphic designer Madurai",
+    "web development Madurai",
+    "brand identity designer Madurai",
+    "React developer Madurai",
+    "UI designer Madurai",
+    "affordable web design Madurai",
+    // Freelance intent — Tamil Nadu
+    "freelance web designer Tamil Nadu",
+    "website designer Tamil Nadu",
+    "logo design Tamil Nadu",
+    // Freelance intent — India
+    "freelance UI engineer India",
+    "freelance React developer India",
+    "hire UI designer India",
+    "Figma to React developer",
+    "Next.js developer freelance India",
+    // Professional identity
+    "UI Engineer",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript Developer",
+    "Karpagapriya",
+    "Karpagapriya A",
   ],
 
   authors: [{ name: "Karpagapriya A", url: "https://portfolio-karpagapriya.vercel.app" }],
@@ -61,29 +90,31 @@ export const metadata: Metadata = {
   shortcut: "/favicon.ico",
 },
 
-  openGraph: {
+openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://portfolio-karpagapriya.vercel.app",
-    siteName: "Karpagapriya A — UI Engineer",
-    title: "Karpagapriya A — UI Engineer | React · Next.js · Figma",
+    siteName: "Karpagapriya A — Freelance UI Engineer & Web Designer",
+    title:
+      "Karpagapriya A — Freelance Web Designer & UI Engineer | Madurai",
     description:
-      "UI Engineer based in Madurai. I design in Figma and build in React. Specialising in Next.js, TypeScript and production dashboards. Open to roles immediately.",
+      "Logo design · Brand identity · Websites · Web apps · Figma to React. Based in Madurai, Tamil Nadu. Starting from ₹4,000. Fast turnaround. Clean work.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Karpagapriya A — UI Engineer Portfolio",
+        alt: "Karpagapriya A — Freelance UI Engineer & Web Designer, Madurai",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Karpagapriya A — UI Engineer | React · Next.js · Figma",
+    title:
+      "Karpagapriya A — Freelance Web Designer & UI Engineer | Madurai",
     description:
-      "UI Engineer based in Madurai. Figma to React. Next.js · TypeScript · Tailwind. Open to roles immediately.",
+      "Logo · Branding · Websites · Web Apps. Based in Madurai. Remote-friendly. From ₹4,000.",
     images: ["/og-image.png"],
   },
 
