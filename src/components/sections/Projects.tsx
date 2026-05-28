@@ -26,7 +26,7 @@ const PROJECTS = [
       "AI market trend analysis module",
       "Full design system — tokens, variants, dark mode",
     ],
-    live: "https://kryptrix-demo.vercel.app",
+    live: "https://kryptrix.vercel.app",
     github: "https://github.com/akarpagapriya/kryptrix",
     tags: ["Crypto", "Dashboard", "Real-time", "API"],
     accentColor: "#0a66c2",
@@ -54,7 +54,7 @@ const PROJECTS = [
     live: "https://www.behance.net/gallery/179654959/Baya-Dressmakers-Brand-Identity",
     github: null,
     tags: ["Branding", "Logo Design", "Identity", "Fashion"],
-    accentColor: "#d97706",
+    accentColor: "#D4A017 ",
     accentLight: "rgba(217,119,6,0.10)",
     heart: false,
     note: null,
@@ -79,7 +79,7 @@ const PROJECTS = [
     live: "https://www.behance.net/gallery/181105077/Tusko-Brand-Identity",
     github: null,
     tags: ["Branding", "Logo Design", "Identity"],
-    accentColor: "#7c3aed",
+    accentColor: "#ff0033",
     accentLight: "rgba(124,58,237,0.10)",
     heart: false,
     note: null,
@@ -191,11 +191,11 @@ type Project = (typeof PROJECTS)[0];
 // ── Horizontal scroll track ───────────────────────────────────────────
 function FeaturedTrack({ projects }: { projects: Project[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const wrapRef  = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const wrap  = wrapRef.current;
+    const wrap = wrapRef.current;
     const track = trackRef.current;
     if (!wrap || !track) return;
 
@@ -579,19 +579,7 @@ function FeaturedSlide({
                 style={{ background: `linear-gradient(135deg, ${project.accentColor}08 0%, transparent 55%)` }}
               />
 
-              {/* Year badge */}
-              {/* <div
-                className="absolute top-3 left-3 font-mono text-xs px-2 py-1"
-                style={{
-                  background: "rgba(5,13,24,0.65)",
-                  color: project.accentColor,
-                  borderRadius: "3px",
-                  backdropFilter: "blur(8px)",
-                  border: `1px solid ${project.accentColor}25`,
-                }}
-              >
-                {project.year}
-              </div> */} 
+
             </div>
           </div>
         </div>
@@ -779,29 +767,35 @@ function ProjectRow({ project }: { project: Project }) {
 
 // ── Main ──────────────────────────────────────────────────────────────
 export default function Projects() {
-  const sectionRef  = useRef<HTMLElement>(null);
-  const headingRef  = useRef<HTMLDivElement>(null);
-  const listRef     = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const listHeadRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(headingRef.current,
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
-          scrollTrigger: { trigger: headingRef.current, start: "top 80%", once: true } }
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
+          scrollTrigger: { trigger: headingRef.current, start: "top 80%", once: true }
+        }
       );
       gsap.fromTo(listHeadRef.current,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
-          scrollTrigger: { trigger: listHeadRef.current, start: "top 80%", once: true } }
+        {
+          y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
+          scrollTrigger: { trigger: listHeadRef.current, start: "top 80%", once: true }
+        }
       );
       const rows = listRef.current?.querySelectorAll(".project-card") ?? [];
       rows.forEach((row, i) => {
         gsap.fromTo(row,
           { x: -16, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.45, delay: i * 0.06, ease: "power2.out",
-            scrollTrigger: { trigger: row, start: "top 92%", once: true } }
+          {
+            x: 0, opacity: 1, duration: 0.45, delay: i * 0.06, ease: "power2.out",
+            scrollTrigger: { trigger: row, start: "top 92%", once: true }
+          }
         );
       });
     }, sectionRef);
@@ -831,7 +825,6 @@ export default function Projects() {
         </div>
         <FeaturedTrack projects={PROJECTS} />
       </div>
-
     </section>
   );
 }
